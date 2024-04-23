@@ -6,6 +6,7 @@ class LoginPage {
         this.userName = page.locator('#username');
         this.password = page.locator('#password');
         this.signInbutton = page.locator("[value='Log in']");
+        this.label=page.locator('//*[@id="kc-content-wrapper"]/div[1]/span');
 
     }
 
@@ -26,6 +27,11 @@ class LoginPage {
         await this.password.fill(password);
         await this.signInbutton.click();
 
+    }
+
+    async getText() {
+        const label1 = await this.label;
+        return label1.textContent();
     }
 
 }

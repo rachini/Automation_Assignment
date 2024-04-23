@@ -10,7 +10,10 @@ test.describe('suite @negative', () => {
 
         await login.gotoLoginPage();
         await login.invalidLogin('MV', 'MVN');
-        await expect(page.locator('//*[@id="kc-content-wrapper"]/div[1]/span')).toHaveText('Invalid username or password.');
+       
+        //verify invalid message
+        const invalidText = await login.getText();
+        expect(invalidText).toBe('Invalid username or password.');
 
 
     });
