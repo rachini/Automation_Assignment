@@ -12,7 +12,8 @@ class ScanNewContactPage {
         this.saveText = page.locator('div').filter({ hasText: /^Save$/ });
         this.deleteText = page.locator('div').filter({ hasText: /^Delete$/ });
         this.toast=page.locator('[role="alert"]');
-        this.text2=page.locator('id=ScanNewContactAssistant-StepIndicatorLabel-1');
+        this.text2=page.locator("[id='ScanNewContactAssistant-StepIndicatorLabel-1']");
+        this.toast2=page.locator('[role="alert"]');
       
     }
 
@@ -32,6 +33,19 @@ class ScanNewContactPage {
         await this.browse.click();
         const fileChooser = await fileChooserPromise;
         await fileChooser.setFiles('/Users/admin/Downloads/BC002.png');
+    }
+
+    async invalidUpload() {
+
+        const fileChooserPromise = this.page.waitForEvent('filechooser');
+        await this.browse.click();
+        const fileChooser = await fileChooserPromise;
+        await fileChooser.setFiles('/Users/admin/Downloads/selenium-java-4.16.1/lib/opentelemetry-semconv-1.28.0-alpha.jar');
+    }
+
+    async invalidUploadToastMessage() {
+        const alertElement = await this.toast2;
+        return alertElement.textContent();
     }
 
     async isSaveButtonEnabled() {

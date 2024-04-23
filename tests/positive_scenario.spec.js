@@ -6,7 +6,7 @@ const { NewContactPage } = require('../pageobjects/NewContactPage');
 test.describe('suite @positive', () => {
 
 
-    test('TC1', async ({ page }) => {
+    test('verify add new contact', async ({ page }) => {
 
         const login = new LoginPage(page)
         const scan = new ScanNewContactPage(page)
