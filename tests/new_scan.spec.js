@@ -90,9 +90,12 @@ test('scan new contact', async ({ page }) => {
     await page.getByText('Find').click();
     await expect(page.locator('//*[@id="AddContactAssistant"]/fnd-lov-dialog/fnd-dialog-container/div/div[2]/div[1]/div/h1')).toHaveText('Account/Lead');
 
+   
+
     //select the value '100001'
     await page.locator('#filterPane-fndFieldFilter-CustomerId i').click();
     await page.getByPlaceholder('Filter').fill('100001');
+  //  await page.pause();
     await page.getByPlaceholder('Filter').press('Enter');
     await page.getByTitle('100001').locator('div').first().click();
 
