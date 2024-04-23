@@ -1,3 +1,5 @@
+const { pathToFileURL } = require("url");
+
 class NewContactPage {
 
     constructor(page) {
@@ -6,6 +8,7 @@ class NewContactPage {
         this.bar = page.locator('//*[@id="AddContactAssistant-CustomerOrLeadDetailGroup-IsNewCustomerOrLead-booleanFieldComponent"]/granite-toggle-switch/label/div');
         this.arrow = page.locator('#AddContactAssistant-CustomerOrLeadDetailGroup-CustomerOrLeadId');
         this.text3=page.locator('//*[@id="AddContactAssistant"]/div/div/div[1]/div[1]/h1');
+        this.ok = page.locator(".granite-button-base granite-button-wrapper granite-button ng-star-inserted");
 
     }
 
@@ -109,15 +112,8 @@ class NewContactPage {
     }
 
 
-
-    // async clickButtonByRoleAndTitle(role, title) {
-    //     const buttonSelector = `button[role="${role}"][title="${title}"]`;
-    //     await this.page.waitForSelector(buttonSelector, { visible: true, timeout: 120000 }); // Wait for button to be visible
-    //     const button = await this.page.$(buttonSelector); // Locate the button
-    //     if (!button) {
-    //         throw new Error(`Button with role "${role}" and title "${title}" not found`);
-    //     }
-    //     await button.click(); // Click the button
+    // async clickOkButton() {
+    //     await this.ok.click();
     // }
 
 

@@ -95,7 +95,7 @@ test('scan new contact', async ({ page }) => {
     //select the value '100001'
     await page.locator('#filterPane-fndFieldFilter-CustomerId i').click();
     await page.getByPlaceholder('Filter').fill('100001');
-  //  await page.pause();
+  
     await page.getByPlaceholder('Filter').press('Enter');
     await page.getByTitle('100001').locator('div').first().click();
 
