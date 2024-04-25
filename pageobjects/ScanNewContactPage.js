@@ -23,7 +23,7 @@ class ScanNewContactPage {
 
     async getH4Text() {
         const h4Text = await this.text1;
-        return h4Text.textContent();
+        return h4Text.textContent;
     }
 
 
@@ -45,7 +45,7 @@ class ScanNewContactPage {
 
     async invalidUploadToastMessage() {
         const alertElement = await this.toast2;
-        return alertElement.textContent();
+        return alertElement.textContent;
     }
 
     async isSaveButtonEnabled() {
@@ -80,12 +80,12 @@ class ScanNewContactPage {
 
     async toastMessageText() {
         const alertElement = await this.toast;
-        return alertElement.textContent();
+        return alertElement.textContent;
     }
 
     async getH4Text2() {
         const h4Text = await this.text2;
-        return h4Text.textContent();
+        return h4Text.textContent;
 
     }
 

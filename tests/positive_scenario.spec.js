@@ -74,6 +74,7 @@ test.describe('suite @positive', () => {
         await contact.pressEnterOnElementByPlaceholder('Filter');
         await contact.clickElementByIdAndText('fndRow-0-CustomerId-StaticField', '100001');
        //await contact.clickOkButton();
+     
        
      
     
