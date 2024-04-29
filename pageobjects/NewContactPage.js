@@ -5,8 +5,8 @@ class NewContactPage {
         this.page = page;
         this.bar = page.locator('//*[@id="AddContactAssistant-CustomerOrLeadDetailGroup-IsNewCustomerOrLead-booleanFieldComponent"]/granite-toggle-switch/label/div');
         this.arrow = page.locator('#AddContactAssistant-CustomerOrLeadDetailGroup-CustomerOrLeadId');
-        this.text3=page.locator('//*[@id="AddContactAssistant"]/div/div/div[1]/div[1]/h1');
-       // this.ok = page.locator(".granite-button-base granite-button-wrapper granite-button ng-star-inserted");
+        this.text3 = page.locator('//*[@id="AddContactAssistant"]/div/div/div[1]/div[1]/h1');
+        // this.ok = page.locator(".granite-button-base granite-button-wrapper granite-button ng-star-inserted");
 
     }
 
@@ -27,6 +27,8 @@ class NewContactPage {
 
     async clickArrow() {
         await this.arrow.getByRole('button', { name: '' }).click();
+
+
     }
 
 
@@ -110,10 +112,10 @@ class NewContactPage {
     }
 
 
-    // async clickOkButton() {
-    //     await this.ok.click();
-    // }
-    
+    async clickOkButton() {
+        await this.ok.click();
+    }
+
 
 
 

@@ -17,8 +17,13 @@ class ScanNewContactPage {
       
     }
 
-    async navigateToUrl(url) {
-        await this.page.goto(url);
+    // async navigateToUrl(url) {
+    //     await this.page.goto(url);
+    // }
+
+    async gotoScanPage() {
+        await this.page.goto('https://topo-d02.build.ifsdemoworld.com/main/ifsapplications/web/assistant/ScanNewContact/ScanNewContactAssistant;path=0.279000411.615228976.1142250054.1092084979');
+
     }
 
     async getH4Text() {

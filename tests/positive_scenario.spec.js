@@ -18,11 +18,10 @@ test.describe('suite @positive', () => {
 
         //Navigate to ScanNewContact page
         test.setTimeout(120000);
-        const url = 'https://topo-d02.build.ifsdemoworld.com/main/ifsapplications/web/assistant/ScanNewContact/ScanNewContactAssistant;path=0.279000411.615228976.1142250054.1092084979';
-        await scan.navigateToUrl(url);
+        await scan.gotoScanPage();
 
 
-        //verify the text in h4
+        //verify the label in h4
         await scan.getH4Text('Scan Business Card', { timeout: 50000 });
 
         //upload image
@@ -51,7 +50,7 @@ test.describe('suite @positive', () => {
         await scan.toastMessageText('Scanning uploaded image', { timeout: 50000 });
 
 
-        //verify the review scanned values text
+        //verify the text review scanned values 
         await scan.getH4Text2('Review Scanned Values');
 
         //click launch button
@@ -73,7 +72,7 @@ test.describe('suite @positive', () => {
         await contact.fillInputByPlaceholder('Filter', '100001');
         await contact.pressEnterOnElementByPlaceholder('Filter');
         await contact.clickElementByIdAndText('fndRow-0-CustomerId-StaticField', '100001');
-       //await contact.clickOkButton();
+        await contact.clickOkButton();
      
        
      

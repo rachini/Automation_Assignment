@@ -19,7 +19,7 @@ test.describe('suite @negative', () => {
 
     });
 
-    test('verify invalid image upload', async ({ page }) => {
+    test('verify invalid image upload', async ({ page}) => {
 
         const login = new LoginPage(page);
         const scan = new ScanNewContactPage(page);
@@ -31,8 +31,7 @@ test.describe('suite @negative', () => {
 
         //Navigate to ScanNewContact page
         test.setTimeout(120000);
-        const url = 'https://topo-d02.build.ifsdemoworld.com/main/ifsapplications/web/assistant/ScanNewContact/ScanNewContactAssistant;path=0.279000411.615228976.1142250054.1092084979';
-        await scan.navigateToUrl(url);
+        await scan.gotoScanPage();
 
 
         //upload image
