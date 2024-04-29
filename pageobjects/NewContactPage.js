@@ -6,7 +6,7 @@ class NewContactPage {
         this.bar = page.locator('//*[@id="AddContactAssistant-CustomerOrLeadDetailGroup-IsNewCustomerOrLead-booleanFieldComponent"]/granite-toggle-switch/label/div');
         this.arrow = page.locator('#AddContactAssistant-CustomerOrLeadDetailGroup-CustomerOrLeadId');
         this.text3 = page.locator('//*[@id="AddContactAssistant"]/div/div/div[1]/div[1]/h1');
-        // this.ok = page.locator(".granite-button-base granite-button-wrapper granite-button ng-star-inserted");
+        this.ok = page.locator(".granite-button-base granite-button-wrapper granite-button ng-star-inserted");
 
     }
 
@@ -81,7 +81,7 @@ class NewContactPage {
 
     async pressEnterOnElementByPlaceholder(placeholder) {
         await this.page.evaluate((placeholder) => {
-            const input = document.querySelector(`[placeholder="${placeholder}"]`);//Within the evaluated function, searchfor an input element with the specified placeholder attribute 
+            const input = document.querySelector(`[placeholder="${placeholder}"]`);//Within the evaluated function, search for an input element with the specified placeholder attribute 
             if (input) {
                 // Dispatch a keydown event with the "Enter" key
                 const event = new KeyboardEvent('keydown', {//line creates a new KeyboardEvent 
